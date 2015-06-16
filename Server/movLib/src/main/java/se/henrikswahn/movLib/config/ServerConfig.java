@@ -15,7 +15,7 @@ public class ServerConfig extends Configuration {
 
     @Valid
     @NotNull
-    @JsonProperty
+    @JsonProperty("database")
     private DataSourceFactory database = new DataSourceFactory();
 
     public DataSourceFactory getDataSourceFactory() {

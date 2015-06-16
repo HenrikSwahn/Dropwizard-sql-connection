@@ -31,7 +31,7 @@ public class Main extends Application<ServerConfig> {
     public void run(ServerConfig serverConfig, Environment environment) throws Exception {
 
         final DBIFactory factory = new DBIFactory();
-        final DBI jdbi = factory.build(environment, serverConfig.getDataSourceFactory(), "postgresql");
+        final DBI jdbi = factory.build(environment, serverConfig.getDataSourceFactory(), "h2");
         final MovieDAO dao = jdbi.onDemand(MovieDAO.class);
         environment.jersey().register(new MovieResource(dao));
 
